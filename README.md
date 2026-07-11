@@ -1,40 +1,21 @@
-# Spatial Autocorrelation (Moran's I)
+# Geospatial Portfolio — Ria Dutta
 
-## Objective
-Assess whether temperature values across the study area are spatially clustered, dispersed, or randomly distributed, using Global Moran's I.
+Geography & Geoinformatics graduate (Bangalore University). This repo collects independent projects in remote sensing, GIS-based spatial analysis, and supervised classification, built using Google Earth Engine, QGIS, and Python.
 
-## Data
-- Feature class: `sample_temperature_UTM` (point data, temperature attribute)
-- Field analyzed: `TEMPERATUR`
+Background: internship at KSRSAC (Govt. of Karnataka), working on Sentinel-2 LULC classification (Random Forest, SVM, Minimum Distance) with full accuracy assessment. The projects below reproduce and extend that skill set on independently sourced, freely licensed data.
 
-## Method (ArcGIS Pro)
-Ran the **Spatial Autocorrelation (Global Moran's I)** tool with:
-- Conceptualization: Fixed Distance
-- Distance method: Euclidean
-- Distance threshold: 1,100 m
-- Row standardization: enabled
+## Projects
 
-## Results
-| Metric | Value |
-|---|---|
-| Moran's Index | –0.350746 |
-| Expected Index | –0.250000 |
-| Variance | 0.135138 |
-| z-score | –0.274057 |
-| p-value | 0.784041 |
+| # | Project | Techniques | Tools | Status |
+|---|---------|-----------|-------|--------|
+| 1 | [Bengaluru LULC Change Detection (2018 vs 2021)](./01-bengaluru-lulc-change-detection) | Cloud masking, compositing, RF/SVM/Minimum Distance classification, accuracy assessment, change detection | Google Earth Engine | 🔧 Planned |
+| 2 | [NDVI–LST Spatial Analysis](./02-ndvi-lst-spatial-analysis) | Grid sampling, regression, correlation, urban heat island analysis (r = –0.58, p < 0.001) | QGIS | ✅ Complete |
+| 3 | [Spatial Autocorrelation (Moran's I)](./03-spatial-autocorrelation-morans-i) | Global Moran's I, spatial clustering test (result: not significant, p = 0.78) | ArcGIS Pro | ✅ Complete |
+| 4 | [NDVI Time Series — Bengaluru Green Cover (2018–2024)](./04-ndvi-timeseries-green-cover) | Time-series analysis, NDVI trend detection | Google Earth Engine | 🔧 Planned |
+| 5 | [Earthquake Exposure — Distance to Nearest Major Hub](./05-earthquake-hub-proximity-analysis) | Near-distance analysis, magnitude-scaled buffer, spatial join/intersect | ArcGIS Pro (ModelBuilder) | 🔧 Planned |
 
-**Interpretation: not statistically significant.** With z = –0.27 and p = 0.78, the observed pattern does not differ meaningfully from what would be expected under complete spatial randomness — ArcGIS's own report confirms this directly. In other words, at a 1,100 m distance threshold, temperature values in this dataset show no detectable spatial clustering or dispersion.
+Each folder has its own README with methodology, results (where complete), and how to reproduce it. Planned projects have a documented workflow in their README ahead of execution.
 
-This is a legitimate negative result, not a failed analysis — it says something real about the data (no spatial autocorrelation at this scale/threshold), and reporting it honestly rather than as a "confirmed clustering" is the statistically correct thing to do. A natural next step, if revisited, would be testing a different distance threshold or conceptualization (e.g. k-nearest neighbors) to see whether significance emerges at another spatial scale.
+## Contact
 
-## Repo contents
-- `project/` — ArcGIS Pro project (`.aprx`), toolbox (`.atbx`)
-- `outputs/` — Moran's I result report (HTML)
-
-## Reproduce it
-Open `project/spatial_autocorrelation_morans.aprx` in ArcGIS Pro. The Spatial Autocorrelation (Global Moran's I) tool result and parameters are documented in `outputs/MoransI_Result_27384_27136_.html`.
-
-## Limitations
-- Result is threshold-dependent — a different fixed-distance value or a k-nearest-neighbors conceptualization could yield a different outcome
-- Single-variable analysis (temperature only); no multivariate or local (LISA) autocorrelation tested
-
+Ria Dutta | ria.dutta706@gmail.com | [LinkedIn](https://linkedin.com/in/ria-dutta-9ab621320)
