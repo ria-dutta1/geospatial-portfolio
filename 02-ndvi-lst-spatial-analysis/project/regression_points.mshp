@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <DATABASE>
+    <FIELDS>
+      <FIELD TYPE="LONGINT">fid</FIELD>
+      <FIELD TYPE="LONGINT">id</FIELD>
+      <FIELD TYPE="DOUBLE">left</FIELD>
+      <FIELD TYPE="DOUBLE">top</FIELD>
+      <FIELD TYPE="DOUBLE">right</FIELD>
+      <FIELD TYPE="DOUBLE">bottom</FIELD>
+      <FIELD TYPE="LONGINT">row_index</FIELD>
+      <FIELD TYPE="LONGINT">col_index</FIELD>
+      <FIELD TYPE="FLOAT">lst</FIELD>
+      <FIELD TYPE="FLOAT">ndvi</FIELD>
+    </FIELDS>
+  </DATABASE>
+  <SOURCE></SOURCE>
+  <HISTORY saga-version="9.7.1">
+    <TOOL library="shapes_grid" id="0" name="Add Grid Values to Points">
+      <OPTION type="choice" id="RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+      <INPUT type="shapes" id="SHAPES" name="Points">
+        <FILE>C:/Users/riadu/AppData/Local/Temp/processing_lePzgY/39d6c4a7ddfc4327a6adb4d3a9574756/SHAPES.shp</FILE>
+      </INPUT>
+      <INPUT_LIST type="grid_list" id="GRIDS" name="Grids">
+        <INPUT type="grid_list" id="GRIDS" name="Grids">
+          <FILE>F:\data analysis_sem5\Regression_Analysis_Data\lst.sgrd</FILE>
+        </INPUT>
+        <INPUT type="grid_list" id="GRIDS" name="Grids">
+          <FILE>F:\data analysis_sem5\Regression_Analysis_Data\ndvi.sgrd</FILE>
+        </INPUT>
+      </INPUT_LIST>
+      <OUTPUT type="shapes" id="RESULT" name="Result">SHAPES</OUTPUT>
+    </TOOL>
+  </HISTORY>
+  <FILE></FILE>
+  <DESCRIPTION></DESCRIPTION>
+  <PROJECTION>
+    <WKT2>PROJCRS["WGS 84 / UTM zone 45N",BASEGEODCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]]],CONVERSION["UTM zone 45N",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["Degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",87,ANGLEUNIT["Degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]],ID["EPSG",16045]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1,ID["EPSG",9001]]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1,ID["EPSG",9001]]]]</WKT2>
+    <PROJ>+proj=utm +zone=45 +datum=WGS84 +units=m +no_defs +type=crs</PROJ>
+    <CODE>-1</CODE>
+  </PROJECTION>
+</SAGA_METADATA>

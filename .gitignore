@@ -1,0 +1,20 @@
+# Large raster/imagery files — keep the repo lightweight, link to source instead
+*.tif
+*.tiff
+*.img
+*.hdf
+
+# QGIS temp/lock files
+*.qgz~
+*.qgs~
+.qgis-lock
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
